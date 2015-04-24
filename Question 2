@@ -1,0 +1,55 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int dotProduct(vector<int>& myvector)
+{
+	int n, acumulador = 0; 
+
+	vector<int> secondvector;
+
+	
+	cout<<"Ingresa los elementos del primer vector (presiona 00 para detenerte)"<<endl;
+
+	do
+		{
+
+		cin>>n;
+
+		myvector.push_back(n);
+		}
+
+	while(n!=00);
+
+	cout<<"Ingresa los elementos del segundo vector"<<endl;
+
+	for(int i=1;i<myvector.size();i++)
+		{
+			cin>>n;
+
+			secondvector.push_back(n);
+
+		}
+
+		for(int i=0;i<secondvector.size();i++)
+		{
+			acumulador = acumulador + myvector[i]*secondvector[i];
+		}
+
+		cout<<"El producto punto de los vectores dados es: "<<acumulador;
+
+
+return acumulador;
+
+}
+
+int main(){
+
+	vector<int> myvector;
+
+	dotProduct(myvector);
+
+	return 0;
+}
+
