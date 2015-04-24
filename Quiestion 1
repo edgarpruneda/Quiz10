@@ -1,0 +1,51 @@
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <cmath>
+
+using namespace std;
+
+int findThrees(vector<int>& myvector)
+{
+	cout<<"Ingresa elementos al vector (ingresa 00 para detenerte)"<<endl;
+
+	int n, acumulador = 0;
+
+	double residuo;
+
+	
+	do
+	{
+
+	cin>>n;
+
+	myvector.push_back(n);
+
+	}while(n!=00);
+
+	for(int i=0; i<myvector.size();i++)
+	{
+		residuo = myvector[i]%3;
+
+		if(residuo==0)
+		{
+			acumulador = acumulador + myvector[i];
+		}
+	}
+
+
+
+	cout<<"La suma de los elementos divisibles entre 3 es: "<<acumulador;
+
+	return acumulador;
+}
+
+int main()
+{
+	vector<int> myvector;
+
+	findThrees(myvector);
+
+	return 0;
+
+}
